@@ -9,22 +9,26 @@ GPIO.setup(37,GPIO.OUT)
 pwm = GPIO.PWM(37,100)
 # Declaração de variáveis
 dutyCicle = 0
-a = 0
-b = 0
-# Funções do PWM ---- Configura o Duty Cicle
-  #inicializa o pwm com 0% de duty cicle
+cont = 0
+
 pwm.start(dutyCicle)
-  #stop PWM
-while(True):
+while(dutyCicle <100):
+
  pwm.ChangeDutyCicle(dutyCicle)
- valor = raw_input("Digite a ou d")
- if(valor=='a')
-   dutyCicle = dutyCicle+10
-   if(dutyCicle==110):
-      dutyCicle = 100
+
+ timesleep(0,5)
+ 
+   dutyCicle = dutyCicle+20
+
+   if(dutyCicle==100):
+
+      while(cont<5):
+     
       pwm.ChangeDutyCicle(dutyCicle)
-   if(valor=='d'):
-      dutyCicle = dutyCicle-10
-      if(dutyCicle==-10):
-         dutyCicle = 0
-         pwm.ChangeDutyCicle(dutyCicle)   	
+      
+      timesleep(0.5)
+
+      dutyCicle = dutyCicle-20
+      
+       cont = cont+1
+      	
