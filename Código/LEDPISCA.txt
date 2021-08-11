@@ -1,0 +1,30 @@
+import RPI.GPIO as GPIO
+
+import time
+
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(37,GPIO.OUT)
+
+# inicializa o PWM com frequência de 100Hz
+pwm = GPIO.PWM(37,100)
+# Declaração de variáveis
+dutyCicle = 0
+a = 0
+b = 0
+# Funções do PWM ---- Configura o Duty Cicle
+  #inicializa o pwm com 0% de duty cicle
+pwm.start(dutyCicle)
+  #stop PWM
+while(True):
+ pwm.ChangeDutyCicle(dutyCicle)
+ valor = raw_input("Digite a ou d")
+ if(valor=='a')
+   dutyCicle = dutyCicle+10
+   if(dutyCicle==110):
+      dutyCicle = 100
+      pwm.ChangeDutyCicle(dutyCicle)
+   if(valor=='d'):
+      dutyCicle = dutyCicle-10
+      if(dutyCicle==-10):
+         dutyCicle = 0
+         pwm.ChangeDutyCicle(dutyCicle)   	
